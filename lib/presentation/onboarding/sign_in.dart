@@ -14,64 +14,68 @@ class SignInPage extends StatelessWidget {
     return BaseLayout(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 100,
-                height: 100,
-                margin: const EdgeInsets.only(bottom: 20),
-                decoration: BoxDecoration(
-                  color: HexColor(AppColors.holderBackColor).withOpacity(.5),
-                  borderRadius: BorderRadius.circular(8),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding:
+                EdgeInsets.only(top: MediaQuery.sizeOf(context).height / 6.5),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 100,
+                  height: 100,
+                  margin: const EdgeInsets.only(bottom: 20),
+                  decoration: BoxDecoration(
+                    color: HexColor(AppColors.holderBackColor).withOpacity(.5),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                 ),
-              ),
-              // Welcome back text with waving hand emoji
-              Text(
-                'Welcome back 👋',
-                style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-              ),
-              const SizedBox(height: 70),
-              // Email field
-              const CustomTextField(
-                hintText: "Enter Email address",
-                labelText: "Email Address",
-              ),
-              const SizedBox(height: 20),
-              // Password field
-              const CustomTextField(
-                hintText: "Enter Password",
-                labelText: "Password",
-                obscureText: true,
-              ),
-              const SizedBox(height: 20),
-              // Forgot password link
-              TextButton(
-                onPressed: () {
-                  // Implement forgot password logic
-                },
-                child: const Text("Forgot password?"),
-              ),
-              const SizedBox(height: 20),
-              // Sign in button
-              CustomButton(
-                  text: "Sign In",
+                // Welcome back text with waving hand emoji
+                Text(
+                  'Welcome back 👋',
+                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                ),
+                const SizedBox(height: 70),
+                // Email field
+                const CustomTextField(
+                  hintText: "Enter Email address",
+                  labelText: "Email Address",
+                ),
+                const SizedBox(height: 20),
+                // Password field
+                const CustomTextField(
+                  hintText: "Enter Password",
+                  labelText: "Password",
+                  obscureText: true,
+                ),
+                const SizedBox(height: 20),
+                // Forgot password link
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                    onPressed: () {
+                      // Implement forgot password logic
+                    },
+                    child: const Text("Forgot password?"),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                // Sign in button
+                CustomButton(
+                    text: "Sign In",
+                    onPressed: () {
+                      // Implement sign in logic
+                    }),
+                const SizedBox(height: 20),
+                // Create account link
+                TextButton(
                   onPressed: () {
-                    // Implement sign in logic
-                  }),
-              const SizedBox(height: 20),
-              // Create account link
-              TextButton(
-                onPressed: () {
-                  // Implement create account logic
-                },
-                child: Center(
+                    // Implement create account logic
+                  },
                   child: Text.rich(
                     TextSpan(
                       text: "I don't have an account, ",
@@ -87,9 +91,9 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 20),
-            ],
+                const SizedBox(height: 20),
+              ],
+            ),
           ),
         ),
       ),
