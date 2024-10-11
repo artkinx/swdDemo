@@ -24,9 +24,9 @@ class SignInPage extends StatelessWidget {
                 Container(
                   width: 100,
                   height: 100,
-                  margin: const EdgeInsets.only(bottom: 20),
+                  margin: const EdgeInsets.only(bottom: 29),
                   decoration: BoxDecoration(
-                    color: HexColor(AppColors.holderBackColor).withOpacity(.5),
+                    color: HexColor(AppColors.holderBackColor).withOpacity(.9),
                     borderRadius: BorderRadius.circular(8),
                   ),
                 ),
@@ -52,7 +52,7 @@ class SignInPage extends StatelessWidget {
                   labelText: "Password",
                   obscureText: true,
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 5),
                 // Forgot password link
                 Align(
                   alignment: Alignment.centerLeft,
@@ -66,7 +66,7 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 // Sign in button
                 CustomButton(
                     text: "Sign In",
