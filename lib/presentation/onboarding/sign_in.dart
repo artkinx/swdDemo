@@ -60,7 +60,10 @@ class SignInPage extends StatelessWidget {
                     onPressed: () {
                       // Implement forgot password logic
                     },
-                    child: const Text("Forgot password?"),
+                    child: Text(
+                      "Forgot password?",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
                   ),
                 ),
                 const SizedBox(height: 20),
