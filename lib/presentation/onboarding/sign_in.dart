@@ -17,6 +17,7 @@ class SignInPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 100,
@@ -70,17 +71,20 @@ class SignInPage extends StatelessWidget {
                 onPressed: () {
                   // Implement create account logic
                 },
-                child: Text.rich(
-                  TextSpan(
-                    text: "I don't have an account, ",
-                    children: [
-                      TextSpan(
-                          text: "Create account",
-                          style:
-                              Theme.of(context).textTheme.bodySmall!.copyWith(
-                                    color: HexColor(AppColors.primary),
-                                  ))
-                    ],
+                child: Center(
+                  child: Text.rich(
+                    TextSpan(
+                      text: "I don't have an account, ",
+                      style: Theme.of(context).textTheme.bodySmall,
+                      children: [
+                        TextSpan(
+                            text: "Create account",
+                            style:
+                                Theme.of(context).textTheme.bodySmall!.copyWith(
+                                      color: HexColor(AppColors.primary),
+                                    ))
+                      ],
+                    ),
                   ),
                 ),
               ),
