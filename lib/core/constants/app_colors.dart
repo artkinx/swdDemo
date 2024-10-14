@@ -5,4 +5,6 @@ class AppColors {
   static const String scaffoldColor = "#141414";
 
   static const String hinttextColor = "#A4A4A4";
+  static const String filledTextFieldColor = "#292929";
+  static const String textFieldBorderColor = "#515151";
 }

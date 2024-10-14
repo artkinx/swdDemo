@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/core/constants/app_colors.dart';
 import 'package:myapp/core/helpers/hex_color.dart';
+import 'package:myapp/presentation/home_page.dart';
+import 'package:myapp/presentation/layouts/onboarding_layout.dart';
 import 'package:myapp/presentation/widgets/custom_button.dart';
 import 'package:myapp/presentation/widgets/custom_text_field.dart';
+import 'package:myapp/presentation/widgets/gradient_text_widget.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 
-import '../layouts/base_layout.dart';
+import 'sign_up_page.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BaseLayout(
+    return OnboardingLayout(
+      topHeightScale: .01,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
         child: SingleChildScrollView(
@@ -33,10 +38,10 @@ class SignInPage extends StatelessWidget {
                 // Welcome back text with waving hand emoji
                 Text(
                   'Welcome back 👋',
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                         color: Colors.white,
+                        fontSize: 26,
+                        fontWeight: FontWeight.w200,
                       ),
                 ),
                 const SizedBox(height: 70),
@@ -71,25 +76,44 @@ class SignInPage extends StatelessWidget {
                 CustomButton(
                     text: "Sign In",
                     onPressed: () {
-                      // Implement sign in logic
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()));
                     }),
                 const SizedBox(height: 20),
                 // Create account link
                 TextButton(
                   onPressed: () {
-                    // Implement create account logic
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const SignUpPage();
+                        },
+                      ),
+                    );
                   },
                   child: Text.rich(
                     TextSpan(
                       text: "I don't have an account, ",
                       style: Theme.of(context).textTheme.bodySmall,
                       children: [
-                        TextSpan(
-                            text: "Create account",
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: GradientTextWidget(
+                            "Create account",
+                            gradientType: GradientType.linear,
+                            colors: [
+                              HexColor(AppColors.primary),
+                              HexColor(AppColors.secondary)
+                            ],
                             style:
                                 Theme.of(context).textTheme.bodySmall!.copyWith(
                                       color: HexColor(AppColors.primary),
-                                    ))
+                                    ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

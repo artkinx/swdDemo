@@ -63,7 +63,7 @@ class _CustomButtonState extends State<CustomButton> {
                   child: child,
                 )),
         onPressed: () {
-          // Implement sign in logic
+          widget.onPressed?.call();
         },
         child: _buildChild(),
       ),

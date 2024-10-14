@@ -31,11 +31,25 @@ class AppThemeHelper {
 
   static final ThemeData _darkMode = ThemeData.dark().copyWith(
     colorScheme: ColorScheme.dark(primary: HexColor(AppColors.primary)),
-    textTheme: GoogleFonts.poppinsTextTheme().copyWith(
-      bodySmall: GoogleFonts.poppinsTextTheme().bodySmall!.copyWith(
-            fontSize: 14,
-            color: Colors.white,
-          ),
+    textTheme: const TextTheme(
+      bodyLarge: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Aeoniks-Regular',
+      ),
+      bodyMedium: TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Aeoniks-Regular',
+      ),
+      bodySmall: TextStyle(
+        color: Colors.white,
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        fontFamily: 'Aeoniks-Regular',
+      ),
     ),
     scaffoldBackgroundColor: HexColor(AppColors.scaffoldColor),
     textButtonTheme: TextButtonThemeData(

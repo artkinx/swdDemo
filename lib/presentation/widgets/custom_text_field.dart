@@ -42,40 +42,44 @@ class _CustomTextFieldState extends State<CustomTextField> {
           ),
         ),
         const SizedBox(height: 10),
-        TextField(
-          obscureText: _obscureText,
-          style: const TextStyle(
-            color: Colors.white,
-          ),
-          decoration: InputDecoration(
-            hintText: widget.hintText,
-            hintStyle: TextStyle(
-              color: HexColor(AppColors.hinttextColor),
+        SizedBox(
+          height: 48,
+          width: double.infinity,
+          child: TextField(
+            obscureText: _obscureText,
+            style: const TextStyle(
+              color: Colors.white,
             ),
-            suffixIcon: widget.obscureText
-                ? GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        _obscureText = !_obscureText;
-                        _icon = _obscureText
-                            ? Icons.visibility
-                            : Icons.visibility_off;
-                      });
-                    },
-                    child: Icon(
-                      _icon,
-                      color: HexColor(AppColors.hinttextColor),
-                    ),
-                  )
-                : null,
-            filled: true,
-            fillColor: HexColor("#292929"),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: HexColor("#515151"),
-                width: 1,
+            decoration: InputDecoration(
+              hintText: widget.hintText,
+              hintStyle: TextStyle(
+                color: HexColor(AppColors.hinttextColor),
               ),
-              // borderRadius: BorderRadius.circular(10),
+              suffixIcon: widget.obscureText
+                  ? GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _obscureText = !_obscureText;
+                          _icon = _obscureText
+                              ? Icons.visibility
+                              : Icons.visibility_off;
+                        });
+                      },
+                      child: Icon(
+                        _icon,
+                        color: HexColor(AppColors.hinttextColor),
+                      ),
+                    )
+                  : null,
+              filled: true,
+              fillColor: HexColor("#292929"),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: HexColor("#515151"),
+                  width: 1,
+                ),
+                // borderRadius: BorderRadius.circular(10),
+              ),
             ),
           ),
         ),
